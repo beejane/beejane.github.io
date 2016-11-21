@@ -1,1 +1,3 @@
-alert("privet mir");
+function say_hello() {
+  alert(1337);
+}
