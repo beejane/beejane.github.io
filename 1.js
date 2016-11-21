@@ -1,3 +1,3 @@
-function say_hello() {
-  alert(1337);
+function say_hello(stroka) {
+  alert(stroka);
 }
