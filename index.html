@@ -1,12 +1,99 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-  <script src="1.js"></script>
-  <script>
-    //say_hello("1", "2", "3", "4");
-  </script>
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--работа для всех устройств с разной шириной экрана-->
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+<title>Company name - home page</title>
 </head>
+
 <body>
-<div tabindex="-1" style="width: 200px; height: 200px" onfocus="alert(1111111)">Hello World!</div>
+	<header> <!--Шапка нашего блога-->
+		<div class="center-block-main">
+			<a href="/"><img src="images/logo.jpg" alt="Logo" class="logo"></a> <!--Логотип и ссылка на него-->
+			<nav> <!--Навигация меню в Шапке-->
+				<ul class="manu">
+					<li><a href="#">Journal</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Work</a></li> 
+					<li><a href="#">Contact</a></li>
+				</ul>	
+			</nav>
+		</div>
+	</header>
+
+	<div class="center-block-main content">
+		<main> <!--левая колонка-->
+			 <article> <!--Первый блок main-первая статья- сначала HEADER, потом весь остальной текст через абзацы Р-->
+			 	<header>
+			 		<img src="images/img1.jpg" alt="Image 1">
+			 		<p class="publish">Published by Nick Speeds 27.01.2017</p>
+			 	</header>
+			 	<h2>Duis aute irure dolor in henderit in voluptate.</h2>
+			 	<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipop ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			 	<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
+			 	<p><a href="#" class="more">Continue Reading</a></p>
+			 </article>
+			  <article><!--Последующие аналогичные первому блоки main-статьи-->
+			 	<header>
+			 		<img src="images/img2.jpg" alt="Image 2">
+			 		<p class="publish">Published by Nick Speeds 27.01.2017</p>
+			 	</header>
+			 	<h2>Duis aute irure dolor in henderit in voluptate.</h2>
+			 	<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipop ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			 	<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
+			 	<p><a href="#" class="more">Continue Reading</a></p>
+			 </article>
+		</main>
+		<aside> <!--/*правая колонка-->
+			<div class="widget"> <!--Первый блок aside - поиск-->
+			<h2>Search</h2>
+			<form action="" method="get">
+				<input type="Search" type="text" class="Search" placeholder="What are you looking for?">				
+			</form>
+			</div>
+
+			<div class="widget"> <!--Второй блок aside - навигация-->
+			<h2>Categories</h2>
+			<nav>
+				<ul>
+					<li><a href="#">Weekend</a></li>
+					<li><a href="#">Nature</a></li>
+					<li><a href="#">Work</a></li>
+					<li><a href="#">Holiday</a></li>
+				</ul>
+			</nav>
+			</div>
+
+			<div class="widget"> <!--Третий блок aside - подписка-->
+			<h2>Stay Tuned</h2>
+				<div class="subsсribe">
+					<form action="" method="get">
+						<input type="email" placeholder="Your Email" class="subsribe-input"> <!--Форма email (со своими настройами css subsribe-input)-->
+						<input type="image" src="images/sbcr-btn.jpg" class="subsribe-img"> <!--Кнопка-стрелка по нажатии на которую на сервер будет отправляться email (со своими настройами css subsribe-img)-->	
+					</form>	
+				</div>		
+			</div>
+			<div class="widget"> <!--Четвертый блок aside - реклама-баннер-->
+			<img src="images/banner.jpg" alt="Banner">				
+			</div>		
+		</aside>
+
+		<div class="clr"></div> <!--Отменяет обтекание общий-->
+
+		<div class="pager clearfix"> <!--Чтобы не схлопывались границы-->
+			<p class="previous-link">&larr; <a href="#">Previous</a></p>
+			<p class="next-link"> <a href="#">Next</a>&rarr;</p>
+		</div>
+	</div>
+
+	<footer>
+		<div class="center-block-main">
+			<a href="/"><img src="images/logo-ftr.jpg" alt="Logo"></a>
+			<p>&copy; 2016 Blogin.com  -  All Rights Reserved  -  Find more free Templates at <b>Pixelhint.com</b></p>
+		</div>
+	</footer>
+
 </body>
 </html>
