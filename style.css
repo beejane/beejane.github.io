@@ -1,0 +1,298 @@
+/* --------------- reset.css --------------- */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, u, i,  dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;                               /* обнуляем отступы и убираем бордюры */
+	vertical-align: baseline;          /* приводим все к одной базовой линии */
+	background: transparent;      /* чтобы не проскакивали левые фоны, установленные по умолчанию */
+	font-size: 100%;                     /* размер шрифта всем одинаковый */
+}
+a {                                      	     /* ссылка не в общем списке чтобы не сбрасывать outline по умолчанию */
+	margin:0;
+	padding:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+	outline:none;
+}
+table {						/* устраняем отступы между ячейками таблицы */
+	border-collapse: collapse; 
+	border-spacing: 0;
+}
+td, td img {
+	vertical-align: top;			/* возвращаем привычное вертикальное выравнивание */
+} 
+input, select, button, textarea {
+	margin: 0; 				/* убираем отступы по умолчанию для элементов форм (в частности для checkbox и radio) */
+	font-size: 100%; 			/* делаем размер шрифтов везде одинаковым */
+	outline: none;
+}
+input[type="text"], input[type="password"], textarea {
+	padding: 0; 				/* убираем внутренние отступы для текстовых полей */
+}
+input[type="checkbox"] { 		/* вертикальное выравнивание чекбоксов и радиобатонов относительно меток */
+	vertical-align: bottom;
+}
+input[type="radio"] {
+	vertical-align: text-bottom;
+}
+sub {
+	vertical-align: sub;
+	font-size: smaller;
+}
+sup {
+	vertical-align: super;
+	font-size: smaller;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display:block;
+}
+nav ul {
+	 list-style:none;
+}
+/* --------------- /reset.css --------------- */
+
+/* --------------- базовые настройки ---------*/
+html {
+	min-height:100%; /* всегда показываем вертикальную полосу прокрутки  */
+}
+body {
+	color: #000;
+	text-align: left;
+	font-size: 1em; /* используем безопасные шрифтовые CSS стеки */
+	min-height:100%;
+	font-family: 'Open Sans', sans-serif;
+}
+a, a:visited { /* порядок правил для ссылок имеет значение */
+	color: #339933;
+	text-decoration: underline;
+}
+a:hover {
+	color: #339933;
+	text-decoration:none;
+}
+a:focus, a:active {
+	color: #339933;
+	text-decoration: underline;
+}
+h1, h2, h3, h4, h5, h6{
+	font-weight:normal;
+}
+img{
+
+	max-width:100%;
+}
+.clr{
+	clear:both;
+}
+.clearfix:after { /*чтобы не схлопывались границы мню*/
+    clear: both;
+    content: "";
+    display: table;
+}
+/* --------------- /базовые настройки ---------*/
+
+header{
+	background: #292929; overflow: hidden;
+}
+	.center-block-main{
+		margin: 0 auto; max-width: 990px; 
+	}
+	.logo{
+		float: left; margin-top: 40px;
+	}
+	.manu{
+		float: right;
+	}
+	.manu li{
+		float: left; font-weight:600; 
+		border:1px solid #1e1e1e; /*рамка*/
+		border-right: none;
+	}
+	.manu li:last-child{
+		border-right: 1px solid #1e1e1e; /*рамка*/
+	}
+	.manu li a{
+		color:#fff; text-decoration:none; padding:50px 35px; display:block; border-bottom: 3px solid #1e1e1e;
+	}
+	.manu li a:hover{
+		color: #58c93a; border-bottom: 3px solid #58c93a;
+	}
+.content{
+	border-right: 1px solid #e1e0e0;
+	border-left: 1px solid #e1e0e0;
+}
+main{
+	float: left; /*background: #0C3; для проверки*/
+	width: 62.5%; margin-top: 70px;
+}
+	article{
+		margin-bottom:70px; /*расстояние между блоками*/ 
+}
+	article>header{
+		font-size: 0; /*исправляет просвет внизу после изображения*/
+		background: none; /*убирает тот серый фон сверху(в хедере)*/
+		margin-bottom:10px; /*задаём отступ после изображения*/
+		position: relative;
+	}
+	.publish{ /*выезжающая плашка поверх изображения поста*/
+		font-size: 13px; background: rgba(0,0,0,0.6);
+		color: #fff;
+		position: absolute; bottom: -60px; /*прятали под изображение*/
+		padding: 10px 20px;
+		width: 100%;
+		box-sizing: border-box; /*ограничивает ширину текста*/
+
+		-webkit-transition: bottom 0.1s linear; /*для древних браузеров*/
+		-moz-transition: bottom 0.1s linear;
+		-o-transition: bottom 0.1s linear;
+		transition: bottom 0.1s linear; /*плавность выезда плашки*/
+	}
+	article>header:hover .publish{ /* по наведению*/
+		bottom: 0;
+	}
+	article>h2{
+		font-size:1.75em; /*перевод в EM: 1em-16px*/
+		text-transform:uppercase; /*делает все буквы в верхнем регистре*/
+		font-weight: 600; /*жирность заголовка*/
+		line-height: 1.1; /*межстрочный интервал*/
+		margin: 0 0 40px 20px; /*отступы верх-право-низ-лево*/
+		color: #4f4e4e;
+	}
+	article>p{
+		margin: 0 0 20px 20px; /*отступы для параграфов*/
+		line-height: 1.3; /*межстрочный интервал*/
+	}
+	a.more{
+		border:2px solid #c2c2c2; /*рамка для ссылки*/
+		color: #c2c2c2; /*цвет текста в ссылке*/
+		padding: 7px 20px; /*отступы внутри от текста верх+низ - лево+право*/
+		display: inline-block; /*для корректного применения отступов*/
+		border-radius: 20px; /*делаем круглые углы - задаем радиус скругления*/
+		text-decoration: none; /*убирает подчеркивание ссылки*/
+		-webkit-transition:all 0.1s linear; /*для старыx браузеров Webkit-Google-Yandex */
+		-moz-transition:all 0.1s linear; /*для старыx браузеров Mozilla*/
+		-o-transition:all 0.1s linear; /*для старыx браузеров Opera*/
+		transition: all 0.1s linear;  /*плавный переход длявсех+времявсек+линейно*/
+	}
+	a:hover.more{ /*по наведению изменится*/
+		color: #339933; /* текст станет зеленым цветом*/
+		border-color: #339933; /* рамка станет зеленым цветом*/
+	}
+aside{
+	float: right; /*background: #09F; для проверки*/ 
+	width: 28.3%; margin-top: 70px;
+}
+	.widget{
+		margin-bottom: 50px; /*отступы от заголовков*/
+	}
+	.widget h2{
+		text-transform:uppercase; /*делает все буквы в верхнем регистре*/
+		color: #6c6969; /*цвет заголовков*/
+		background: #f8f8f8; /*фон заголовка*/
+		border-left: 2px solid #58c93a; /* цвет левого бордюра*/
+		padding: 10px 20px; /*отступы верх-право*/
+		font-weight: 600; /*толщина текста - жирность*/
+		margin-bottom: 20px; /*отступ снизу*/
+	}
+	.Search{
+		color: #b9b9b9; /*цвет подсказки в поиске*/
+		font-size: 0.75em; /*размер текста в поиске*/
+		width: 100%; /*ширина*/ 
+		border:1px solid #e1e0e0; /*рамка поиcка*/
+		border-right: none; /*убирает правую рамку*/
+		padding: 15px 20px; /*внутренние отступы для подсказки*/
+	}
+	.widget>nav{
+		margin: 0 0 0 20px; /*отступ слева*/
+	}
+	.subsсribe{
+		position: relative; /*относительное позиционирование*/
+		width: 100%; /*на всю ширину*/
+		height: 48px; /*нижний отступ*/
+	}
+	.subsribe-input{
+		color: #b9b9b9; /*цвет подсказки в email*/
+		font-size: 0.75em; /*размер текста в email*/
+		width: 100%; /*ширина*/ 
+		border:1px solid #e1e0e0; /*рамка email*/
+		border-right: none; /*убирает правую рамку*/
+		padding: 15px 50px 15px 20px; /*внутренние отступы для email*/
+		box-sizing: border-box; /*для нашего блока ширина будет вкл.в себя 
+		и бордер и паддинг*/
+		position: absolute; /*абсолютное позиционирование*/
+		top: 0; left: 0;
+	}
+	.subsribe-img{
+		position: absolute;
+		right:20px;
+		top: 12px;
+	}
+	.pager{
+		border-top: 1px solid #e1e0e0; /*верхний бордюр в футере*/
+		font-size:1.125em;
+		text-transform:uppercase; /*делает все буквы в верхнем регистре*/
+		font-weight: 600;
+		padding: 30px;
+	}
+		.pager a{
+			color: #818181; /*цвет текста (для ссылок)*/
+			text-decoration: none; /*убирает подчеркивание ссылок*/
+		}
+		.pager a:hover{ /*при наведении*/ 
+			text-decoration: underline; /*подчеркивает ссылку*/
+		}
+		.previous-link{
+			float: left;
+		}
+		.next-link{
+			float: right;
+		}
+footer{
+	background: #f8f8f8; 
+	border-top: 1px solid #e1e0e0; 
+	text-align: center;
+	font-size: 0.8125em;
+	padding: 50px;
+	color: #939292;
+}
+	footer img{
+		margin-bottom: 20px;
+	}
+
+@media screen and (max-width: 768px) {
+	.logo{
+		margin-top: 9px;
+	}
+	.manu li a{
+		padding:20px 35px;
+	}
+	main{
+		float: none; /*background: #0C3; для проверки*/
+		width: 100%; margin-top: 20px;
+	}
+	article>header img{
+		width: 100%;
+	}
+	aside{
+		float: none; /*background: #09F; для проверки*/ 
+		width: 100%; margin-top: 70px;
+	}
+}
+@media screen and (max-width: 620px) {
+	.logo{
+		float: none; margin:3px auto; display: block;
+	}
+	.manu{
+		float: none; width: 100%;
+		/*нашла кусочек кода в нете для выравнивания меню по центру
+		display: flex;
+    	align-items: center;
+   		justify-content: center;
+   		height: 100%; */
+	}
+	.manu li a{
+		padding: 5px 35px; 
+	}
+}
